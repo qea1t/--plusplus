@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Square
+{
+public:
+	Square(double side);
+	double side;
+	double area;
+	void setSide(double x)
+	{
+		side = x;
+		area = side * side;
+	}
+};
+Square::Square(double side)
+{
+	this->side = side;
+	this->area = side * side;
+}
+
+void print(Square* square)
+{
+	cout << "Square: side=" << square->side << " area=" <<square->area << endl;
+}
+
+int main()
+{
+	Square s(4);
+	print(&s);
+	s.setSide(2.2);
+	print(&s);
+	s.setSide(-33);
+	print(&s);
+		return 0;
+}
